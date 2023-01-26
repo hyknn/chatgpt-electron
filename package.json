@@ -31,9 +31,7 @@
   "author": "Hyknn <hykncode@gmail.com>",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^22.0.2"
-  },
-  "dependencies": {
+    "electron": "^22.0.2",
     "electron-builder": "^23.6.0"
   }
 }
