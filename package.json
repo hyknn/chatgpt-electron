@@ -1,22 +1,39 @@
 {
-  "name": "electron-quick-start",
+  "name": "chatgpt-electron",
+  "appId": "com.github.hyknn.${name}",
+  "productName": "ChatGPT",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "Linux Desktop client for ChatGPT",
+  "main": "scripts/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder --publish never"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "build": {
+    "asar": false,
+    "linux": {
+      "target": [
+        "zip",
+        "AppImage",
+        "deb"
+      ],
+      "icon": "./build/icons",
+      "category": "Offices",
+      "desktop": "com.github.hyknn.${name}.desktop",
+      "artifactName": "${name}_${version}.${ext}"
+    }
+  },
+  "repository": "https://github.com/hyknn/chatgpt-electron",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "ChatGPT"
   ],
-  "author": "GitHub",
+  "author": "Hyknn <hykncode@gmail.com>",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^22.0.2"
+  },
+  "dependencies": {
+    "electron-builder": "^23.6.0"
   }
 }
